@@ -15,7 +15,7 @@ const MainContainer = () => {
   const [city, setCity] = useState("Seattle");
   api
     .get(
-      `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=4aa1128f6fa7655f7f0ea41dc03cc0a1`
+      `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=4aa1128f6fa7655f7f0ea41dc03cc0a1`
     )
     .then((res) => {
       setWeather(res.data.weather[0].main);
