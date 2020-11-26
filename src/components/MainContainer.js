@@ -3,6 +3,7 @@ import styled from "styled-components";
 import axios from "axios";
 
 import CityInput from "./CityInput";
+import WeatherCard from "./WeatherCard";
 
 const api = axios.create({
   baseUrl:
@@ -22,10 +23,11 @@ const MainContainer = () => {
 
   return (
     <StyledContainer>
-      <h2>Main Container</h2>
+      <h2>Enter City</h2>
       <CityInput setCity={setCity} />
-      <p className="city">{city}</p>
-      <p>{weather}</p>
+      <WeatherCard weather={weather} />
+      <h2 className="city">{city}</h2>
+      <h3>{weather}</h3>
     </StyledContainer>
   );
 };
@@ -34,11 +36,13 @@ const StyledContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+
   h2 {
-    margin: 2rem 0;
+    margin: 2rem 0 1rem 0;
+    font-size: bold;
   }
-  .city {
-    margin: 2rem;
+  h3 {
+    margin: 0;
   }
 `;
 
